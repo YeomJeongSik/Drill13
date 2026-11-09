@@ -1,4 +1,4 @@
-﻿import game_framework
+import game_framework
 from pico2d import *
 
 
@@ -24,4 +24,3 @@ def handle_events():
             game_framework.quit()
         elif event.type == SDL_KEYDOWN and event.key == SDLK_p:
             game_framework.pop_mode()
-
