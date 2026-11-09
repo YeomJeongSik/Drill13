@@ -1,4 +1,4 @@
-from math import pi
+﻿from math import pi
 
 from pico2d import get_canvas_width, get_time, load_image
 from sdl2 import (SDL_KEYDOWN, SDL_KEYUP, SDLK_LEFT, SDLK_RIGHT,
@@ -19,6 +19,7 @@ class Boy:
         self.face_dir = 1
         self.pressed_keys = set()
         self.ball_type = 1
+        self.input_locked = False
 
         self.machine = Machine(
             model=self,
@@ -119,3 +120,4 @@ class Boy:
             row = 300 if self.face_dir == 1 else 200
             self.image.clip_draw(self.frame * 100, row, 100, 100,
                                  self.x, self.y)
+

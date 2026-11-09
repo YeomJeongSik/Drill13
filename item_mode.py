@@ -11,7 +11,7 @@ draw_underlying = False
 
 def init():
     global image
-    play_mode.boy.clear_input()
+    play_mode.boy.clear_input()\n    play_mode.boy.input_locked = True
     image = load_image('item_select.png')
 
 
@@ -51,4 +51,5 @@ def handle_events():
             elif event.key == SDLK_2:
                 play_mode.boy.ball_type = 2
                 game_framework.pop_mode()
+
 
