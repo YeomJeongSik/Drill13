@@ -1,4 +1,4 @@
-import time
+﻿import time
 running = False
 stack = []
 
@@ -31,6 +31,10 @@ def quit():
     running = False
 
 
+def render_underlying_modes():
+    for mode in stack[:-1]:
+        mode.render()
+
 def run(start_mode):
     global running, stack
     running = True
@@ -44,11 +48,11 @@ def run(start_mode):
                     mode.update()
             stack[-1].update()
             if getattr(stack[-1], 'draw_underlying', False):
-                for mode in stack[:-1]:
-                    mode.render()
+                render_underlying_modes()
             stack[-1].render()
             time.sleep(0.02)
     finally:
         while stack:
             stack.pop().finish()
         running = False
+
