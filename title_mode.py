@@ -1,4 +1,4 @@
-import game_framework
+﻿import game_framework
 from pico2d import *
 import play_mode
 
@@ -31,3 +31,4 @@ def handle_events():
             game_framework.change_mode(play_mode)
         elif event.type == SDL_KEYDOWN and event.key == SDLK_ESCAPE:
             game_framework.quit()
+
