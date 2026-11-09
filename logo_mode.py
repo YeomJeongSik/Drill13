@@ -1,4 +1,4 @@
-import game_framework
+﻿import game_framework
 from pico2d import*
 import title_mode
 
