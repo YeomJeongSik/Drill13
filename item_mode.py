@@ -1,4 +1,4 @@
-import game_framework
+﻿import game_framework
 from pico2d import *
 import game_world
 
@@ -31,6 +31,10 @@ def render():
     update_canvas()
 
 
+def select_item(ball_type):
+    play_mode.boy.ball_type = ball_type
+    game_framework.pop_mode()
+
 def handle_events():
     for event in get_events():
         if event.type == SDL_QUIT:
@@ -47,3 +51,4 @@ def handle_events():
             elif event.key == SDLK_2:
                 play_mode.boy.ball_type = 2
                 game_framework.pop_mode()
+
